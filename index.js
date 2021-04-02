@@ -7,8 +7,8 @@ const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config()
 const app = express()
 //2nd
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
+ app.use(bodyParser.json());
+ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
