@@ -14,6 +14,10 @@ app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
 //2nd then send product in insertOne(product)
 const port = 5000;
+
+app.get('/', (req, res) => {
+  res.send("hello from db it's working")
+})
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.fhsev.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 //console.log(process.env.DB_PASS);
@@ -88,5 +92,8 @@ app.delete('/deleteProduct', (req, res) => {
 
 
 
-app.listen(port);
+app.listen(process.env.PORT || port);
 
+//https://github.com/uddipan01/full-stack-server
+//https://git.heroku.com/obscure-garden
+//https://obscure-garden-70038.herokuapp.com/
